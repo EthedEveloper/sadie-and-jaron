@@ -1,96 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RSVP — Sadie &amp; Jaron</title>
-  <meta name="description" content="RSVP for the wedding of Sadie Collyer and Jaron Carr — Thursday, September 9, 2027 at Villa Siena. Please reply by July 1, 2027.">
-  <link rel="icon" type="image/svg+xml" href="assets/swan.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Pinyon+Script&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
-  <header class="site-nav">
-    <div class="wrap">
-      <a class="monogram" href="index.html">S <span>&amp;</span> J</a>
-      <a class="btn btn-gold" href="rsvp.html" aria-current="page">RSVP</a>
-      <nav class="nav-links" aria-label="Main">
-        <a href="index.html">Home</a>
-        <a href="story.html">Our Story</a>
-        <a href="schedule.html">Schedule</a>
-        <a href="travel.html">Travel</a>
-        <a href="registry.html">Registry</a>
-        <a href="faq.html">FAQ</a>      </nav>
-    </div>
-  </header>
-
-  <section class="band-ivory">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">Répondez S'il Vous Plaît</p>
-        <h2>Will You Join Us?</h2>
-        <p>Please reply by July 1, 2027 — one form per party.</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RSVP — Sadie &amp; Jaron</title>
+    <meta
+      name="description"
+      content="RSVP for the wedding of Sadie Collyer and Jaron Carr — Thursday, September 9, 2027 at Villa Siena. Please reply by July 1, 2027."
+    />
+    <link rel="icon" type="image/svg+xml" href="assets/swan.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Pinyon+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-nav">
+      <div class="wrap">
+        <a class="monogram" href="index.html">S <span>&amp;</span> J</a>
+        <a class="btn btn-gold" href="rsvp.html" aria-current="page">RSVP</a>
+        <nav class="nav-links" aria-label="Main">
+          <a href="index.html">Home</a>
+          <a href="story.html">Our Story</a>
+          <a href="schedule.html">Schedule</a>
+          <a href="travel.html">Travel</a>
+          <a href="registry.html">Registry</a>
+          <a href="faq.html">FAQ</a>
+        </nav>
       </div>
+    </header>
 
-      <form id="rsvp-form" class="rsvp-card" novalidate>
-        <div class="field">
-          <label for="primary-name">Your full name</label>
-          <input type="text" id="primary-name" name="primaryName" placeholder="Your full name" autocomplete="name" required>
+    <section class="band-ivory">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Répondez S'il Vous Plaît</p>
+          <h2>Will You Join Us?</h2>
+          <p>Please reply by July 1, 2027 — one form per party.</p>
         </div>
 
-        <div class="field">
-          <label for="primary-email">Email (for your confirmation)</label>
-          <input type="email" id="primary-email" name="email" placeholder="you@example.com" autocomplete="email">
+        <form id="rsvp-form" class="rsvp-card" novalidate>
+          <div class="field">
+            <label for="primary-name">Your full name</label>
+            <input
+              type="text"
+              id="primary-name"
+              name="primaryName"
+              placeholder="Your full name"
+              autocomplete="name"
+              required
+            />
+          </div>
+
+          <div class="field">
+            <label for="primary-email">Email (for your confirmation)</label>
+            <input
+              type="email"
+              id="primary-email"
+              name="email"
+              placeholder="you@example.com"
+              autocomplete="email"
+            />
+          </div>
+
+          <div class="field">
+            <span
+              class="attend-pills"
+              role="radiogroup"
+              aria-label="Will you attend?"
+            >
+              <label class="attend-pill">
+                <input type="radio" name="attending" value="yes" checked />
+                Joyfully accepts
+              </label>
+              <label class="attend-pill">
+                <input type="radio" name="attending" value="no" />
+                Regretfully declines
+              </label>
+            </span>
+          </div>
+
+          <div class="field" id="party-field">
+            <label>Others in your party</label>
+            <div id="party-guests"></div>
+            <button
+              type="button"
+              class="btn btn-outline add-guest"
+              id="add-guest"
+            >
+              + Add someone in your party
+            </button>
+          </div>
+
+          <div class="field">
+            <label for="dietary">Dietary notes</label>
+            <textarea
+              id="dietary"
+              name="dietary"
+              placeholder="Allergies or dietary needs for anyone in your party — or leave blank."
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-gold" style="width: 100%">
+            Send RSVP
+          </button>
+          <p class="form-note">
+            One form per party. After you send it, you'll see a confirmation
+            telling you exactly where your reply was saved.
+          </p>
+        </form>
+
+        <div class="rsvp-confirm" id="rsvp-confirm" role="status">
+          <div class="confirm-mark" aria-hidden="true">✓</div>
+          <h3>Thank you!</h3>
+          <p id="confirm-text">
+            Your RSVP has been received. We can't wait to celebrate with you.
+          </p>
         </div>
-
-        <div class="field">
-          <span class="attend-pills" role="radiogroup" aria-label="Will you attend?">
-            <label class="attend-pill">
-              <input type="radio" name="attending" value="yes" checked>
-              Joyfully accepts
-            </label>
-            <label class="attend-pill">
-              <input type="radio" name="attending" value="no">
-              Regretfully declines
-            </label>
-          </span>
-        </div>
-
-        <div class="field" id="party-field">
-          <label>Others in your party</label>
-          <div id="party-guests"></div>
-          <button type="button" class="btn btn-outline add-guest" id="add-guest">+ Add someone in your party</button>
-        </div>
-
-        <div class="field">
-          <label for="dietary">Dietary notes</label>
-          <textarea id="dietary" name="dietary" placeholder="Allergies or dietary needs for anyone in your party — or leave blank."></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-gold" style="width:100%">Send RSVP</button>
-        <p class="form-note">One form per party. After you send it, you'll see a confirmation telling you exactly where your reply was saved.</p>
-      </form>
-
-      <div class="rsvp-confirm" id="rsvp-confirm" role="status">
-        <div class="confirm-mark" aria-hidden="true">✓</div>
-        <h3>Thank you!</h3>
-        <p id="confirm-text">Your RSVP has been received. We can't wait to celebrate with you.</p>
       </div>
+    </section>
 
-    </div>
-  </section>
+    <footer class="site-footer">
+      <div class="wrap">
+        <p class="script-names">Sadie <span class="amp">&amp;</span> Jaron</p>
+        <p>
+          Thursday, September 9, 2027 · Villa Siena, 890 W Elliot Rd, Gilbert,
+          AZ 85233
+        </p>
+        <p class="footer-note">
+          Questions? Please ask Makenna Baker.<a href="tel:5056597754"
+            >505-659-7754</a
+          >
+        </p>
+      </div>
+    </footer>
 
-  <footer class="site-footer">
-    <div class="wrap">
-      <p class="script-names">Sadie <span class="amp">&amp;</span> Jaron</p>
-      <p>Thursday, September 9, 2027 · Villa Siena, 890 W Elliot Rd, Gilbert, AZ 85233</p>
-      <p class="footer-note">Questions? Please ask Makenna Baker.</p>
-    </div>
-  </footer>
-
-  <script src="app.js"></script>
-</body>
+    <script src="app.js"></script>
+  </body>
 </html>
